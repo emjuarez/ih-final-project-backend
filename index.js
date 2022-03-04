@@ -17,6 +17,7 @@ app.use(express.json({extended: true}))
 // 3. RUTEO
 
 app.use("/api/users", require("./routes/users"))
+app.use("/api/places", require("./routes/places"))
 app.use("/", require("./routes/index"))
 
 
