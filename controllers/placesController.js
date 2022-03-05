@@ -39,3 +39,54 @@ exports.getPlaces = async (req, res) => {
     })
 
 }
+
+exports.getCulture = async (req, res) =>{
+
+    
+    const culturePlaces =  await Place.find({cathegory:"culture"})
+
+    res.json({
+        msg:"Se han obtenido los lugares de cultura",
+        data: culturePlaces
+    })
+}
+
+exports.getFood = async (req, res) => {
+
+    const culturePlaces =  await Place.find({cathegory:"food"})
+
+    res.json({
+        msg:"Se han obtenido los lugares de comida",
+        data: culturePlaces
+    })
+}
+
+exports.getNight = async (req, res) => {
+
+    const culturePlaces =  await Place.find({cathegory:"night life"})
+
+    res.json({
+        msg:"Se han obtenido los lugares de vida nocturna",
+        data: culturePlaces
+    })
+}
+
+exports.getOut = async (req, res) => {
+
+    const culturePlaces =  await Place.find({cathegory:"outdoors"})
+
+    res.json({
+        msg:"Se han obtenido los lugares de outdoors",
+        data: culturePlaces
+    })
+}
+
+exports.getOther = async (req, res) => {
+
+    const culturePlaces =  await Place.find({cathegory:"other"})
+
+    res.json({
+        msg:"Se han obtenido los lugares de other",
+        data: culturePlaces
+    })
+}
