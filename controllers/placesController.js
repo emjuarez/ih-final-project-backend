@@ -1,7 +1,7 @@
 const async = require("hbs/lib/async")
 const Place = require("./../models/Place")
 
-exports.createPlace = async (req, res) => {
+exports.createPlace   = async (req, res) => {
 
     const { name, description, photos, cathegory, location } = req.body
 
@@ -29,7 +29,7 @@ exports.createPlace = async (req, res) => {
     }
 }
 
-exports.getPlaces = async (req, res) => {
+exports.getPlaces     = async (req, res) => {
 
     const allPlaces = await Place.find({})
 
@@ -40,7 +40,7 @@ exports.getPlaces = async (req, res) => {
 
 }
 
-exports.getCulture = async (req, res) =>{
+exports.getCulture    = async (req, res) =>{
 
     
     const culturePlaces =  await Place.find({cathegory:"culture"})
@@ -51,7 +51,7 @@ exports.getCulture = async (req, res) =>{
     })
 }
 
-exports.getFood = async (req, res) => {
+exports.getFood       = async (req, res) => {
 
     const culturePlaces =  await Place.find({cathegory:"food"})
 
@@ -61,7 +61,7 @@ exports.getFood = async (req, res) => {
     })
 }
 
-exports.getNight = async (req, res) => {
+exports.getNight      = async (req, res) => {
 
     const culturePlaces =  await Place.find({cathegory:"night life"})
 
@@ -71,7 +71,7 @@ exports.getNight = async (req, res) => {
     })
 }
 
-exports.getOut = async (req, res) => {
+exports.getOut        = async (req, res) => {
 
     const culturePlaces =  await Place.find({cathegory:"outdoors"})
 
@@ -81,7 +81,7 @@ exports.getOut = async (req, res) => {
     })
 }
 
-exports.getOther = async (req, res) => {
+exports.getOther      = async (req, res) => {
 
     const culturePlaces =  await Place.find({cathegory:"other"})
 
