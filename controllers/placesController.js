@@ -104,3 +104,20 @@ exports.getOther      = async (req, res) => {
         data: culturePlaces
     })
 }
+
+exports.deletePlace = async (req,res) => {
+
+    const { id } = req.params
+
+    try{
+
+        const deletedPlace = await Place.findByIdAndRemove(id)
+        res.redirect('/')
+
+    } catch (error) {
+
+        console.log(error)
+
+        res.render(`place/${id}`)
+    }
+}
