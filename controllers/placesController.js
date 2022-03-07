@@ -40,6 +40,20 @@ exports.getPlaces     = async (req, res) => {
 
 }
 
+exports.getPlace      = async (req,res) =>{
+
+    const { id } = req.params
+
+    
+
+    const place = await Place.findById(id)
+
+    res.json({
+        msg:"Se ha obtenido el lugar",
+        data: place
+    })
+}
+
 exports.getCulture    = async (req, res) =>{
 
     
