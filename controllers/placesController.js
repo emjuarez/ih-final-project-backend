@@ -54,6 +54,20 @@ exports.getPlace      = async (req,res) =>{
     })
 }
 
+exports.editPlace     = async (req,res) => {
+
+    const { name, description, photos, cathegory, location } = req.body
+
+    const { id } = req.params
+    
+    await Place.findByIdAndUpdate(
+        id,
+        {name, description, photos, cathegory, location},
+        { new: true }
+        )
+
+}
+
 exports.getCulture    = async (req, res) =>{
 
     
@@ -112,7 +126,11 @@ exports.deletePlace = async (req,res) => {
     try{
 
         const deletedPlace = await Place.findByIdAndRemove(id)
-        res.redirect('/')
+
+        res.json({
+            msg:"Se ha eliminado este lugar",
+            data: deletedPlace
+        })
 
     } catch (error) {
 
@@ -121,3 +139,4 @@ exports.deletePlace = async (req,res) => {
         res.render(`place/${id}`)
     }
 }
+
