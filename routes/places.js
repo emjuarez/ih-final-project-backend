@@ -14,6 +14,6 @@ router.get("/night_life", placesController.getNight)
 router.get("/outdoors", placesController.getOut)
 router.get("/other", placesController.getOther)
 router.post("/delete/:id", placesController.deletePlace)
-router.post("/place/:placeId/edit", placesController.editPlace)
+router.post("/place/edit/:id", placesController.editPlace)
 
 module.exports = router

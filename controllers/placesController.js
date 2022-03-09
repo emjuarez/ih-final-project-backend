@@ -58,12 +58,14 @@ exports.editPlace     = async (req,res) => {
 
     const { name, description, photos, cathegory, location } = req.body
 
+    console.log(name)
+
     const { id } = req.params
-    
+    console.log(id)
     await Place.findByIdAndUpdate(
         id,
         {name, description, photos, cathegory, location},
-        { new: true }
+        
         )
 
 }
@@ -136,7 +138,7 @@ exports.deletePlace = async (req,res) => {
 
         console.log(error)
 
-        res.render(`place/${id}`)
+        
     }
 }
 
