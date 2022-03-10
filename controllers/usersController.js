@@ -16,13 +16,13 @@ exports.create = async (req, res) => {
 
 
 		try {
-			// 1. VERIFICACIÓN DEL PASSWORD Y ENCRIPTARLO
+			
 			const salt = await bcryptjs.genSalt(10)
 			const hashedPassword = await bcryptjs.hash(password, salt)
 
 			console.log(hashedPassword)
 
-			// 2. CREACIÓN DEL USUARIO
+			
 			const newUser = await User.create({
 				name,
 				lastname,
@@ -30,21 +30,15 @@ exports.create = async (req, res) => {
 				password: hashedPassword
 			})
 
-			console.log(newUser)
-
-			// - GESTIÓN DE JWT - AUTENTICACIÓN
-			// CUANDO EL USUARIO SE REGISTRA, YA NO ES NECESARIO QUE INICIE SESIÓN EN ESE MOMENTO.
-
-			// A. CREACIÓN DEL PAYLOAD (DATOS)
 			const payload = {
 				user: {
 					id: newUser._id
 				}
 			}
 
-			// B. CREACIÓN DE JSON WEB TOKEN
+			
 			jwt.sign(
-				payload, // DATOS QUE ACOMPAÑAN
+				payload, 
 				process.env.SECRET,
 				{
 					expiresIn: 3600000
@@ -59,8 +53,6 @@ exports.create = async (req, res) => {
 
 				}
 			)
-
-
 
 		} catch (error) {
 			console.log(error)
@@ -97,10 +89,6 @@ exports.login = async (req, res) => {
 				msg: "El usuario o la contraseña no coinciden"
 			})
 		}
-
-		// GESTIÓN DE JSONWEBTOKEN
-
-		// A. PAYLOAD
 
 		const payload = {
 			user: {

@@ -21,7 +21,7 @@ exports.createPlace   = async (req, res) => {
 
     } catch (error){
 
-        console.log(error)
+        
 
         res.status(400).json({
             msg: "Se ha generado un error"
@@ -58,10 +58,8 @@ exports.editPlace     = async (req,res) => {
 
     const { name, description, photos, cathegory, location } = req.body
 
-    console.log(name)
-
     const { id } = req.params
-    console.log(id)
+    
     await Place.findByIdAndUpdate(
         id,
         {name, description, photos, cathegory, location},
