@@ -1,27 +1,12 @@
-# Template para proyectos con Node y Handlebars
+# Spotview
 
-## Instalación
+## Web application for share and discover unique places around you
+### *Backend Repo*
 
-Para poder utilizar este template, es necesario que se descargue o se realice un `git clone`.
+**Technologies used:** Node JS, ExpressJS, MongoDB, MongooseJS.
 
-Una vez hecho esto, realizar instalación de dependencias.
+This project is meant to reconnect with yourself and with the outside world by exploring new places.
 
-```shell
-$ npm install 
-```
+## Credits
 
-Posteriormente, crear un archivo `.env` con las siguientes propiedades:
-
-```env
-# ESTABLECER EL PUERTO
-PORT= 
-
-# ESTABLECER LA BASE DE DATOS
-MONGODB_URI=
-```
-
-Puedes revisar como ejemplo el archivo `.env.example` con las propiedades.
-
-## Créditos
-
-Para cualquier inquietud, contáctame [zerauleuname@gmail.com](mailto:zerauleuname@gmail.com) 
+Send me an email! [emanueljuarez.webdev@gmail.com](mailto:emanueljuarez.webdev@gmail.com) 
